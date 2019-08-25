@@ -21,6 +21,7 @@ public class _1_1_IsUnique {
         Assert.check(!isUniqueWithoutDataStructure("doggy"));
         Assert.check(isUniqueWithoutDataStructure("dog"));
         Assert.check(isUniqueWithoutDataStructure("abcdefghijklmnopqrstuvwxyz"));
+        Assert.check(!isUniqueWithoutDataStructure("abcdefghijklmnopqrstuvwxyzz"));
     }
 
     static boolean isUniqueWithDataStructure(String s){
@@ -43,8 +44,8 @@ public class _1_1_IsUnique {
         char[] chars = s.toCharArray();
         Arrays.sort(chars);
 
-        for(int i = 1; i < chars.length-1; i++){
-            if(chars[i] == chars[i-1]) return false;
+        for(int i = 0; i < chars.length-1; i++){
+            if(chars[i] == chars[i+1]) return false;
         }
         return true;
     }
