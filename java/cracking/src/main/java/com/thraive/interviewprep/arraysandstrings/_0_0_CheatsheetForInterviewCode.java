@@ -5,6 +5,7 @@ import com.sun.tools.javac.util.Assert;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -51,8 +52,24 @@ public class _0_0_CheatsheetForInterviewCode {
         out.println("Printing sorted by name");
         people.forEach(p -> out.println(p.name));
 
-    }
 
+        // Maps
+
+        // create from list
+        Map<Integer, Person> personMap = people.stream().collect(Collectors.toMap(p -> p.id, p -> p));
+
+        // iterate over keys
+        for(Integer key : personMap.keySet()){
+            System.out.println(key);
+        }
+        // iterate over values
+        for(Person p : personMap.values()){
+            System.out.println(p.toString());
+        }
+
+        personMap.forEach((k, v) -> System.out.println("key: " + k + ", value: " + v.toString()));
+
+    }
 
     public static class Person{
         int id;
@@ -61,6 +78,14 @@ public class _0_0_CheatsheetForInterviewCode {
         public Person(int id, String name) {
             this.id = id;
             this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    '}';
         }
     }
 }
