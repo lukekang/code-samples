@@ -2,6 +2,8 @@ package com.thraive.interviewprep.arraysandstrings;
 
 import com.sun.tools.javac.util.Assert;
 
+import java.util.Arrays;
+
 public class _1_1_IsUnique {
 
     /*
@@ -13,8 +15,12 @@ public class _1_1_IsUnique {
 
         Assert.check(!isUniqueWithDataStructure("doggy"));
         Assert.check(isUniqueWithDataStructure("dog"));
-        Assert.check(isUniqueWithDataStructure("the quick brown fox sat"));
+        Assert.check(isUniqueWithDataStructure("abcdefghijklmnopqrstuvwxyz"));
 
+
+        Assert.check(!isUniqueWithoutDataStructure("doggy"));
+        Assert.check(isUniqueWithoutDataStructure("dog"));
+        Assert.check(isUniqueWithoutDataStructure("abcdefghijklmnopqrstuvwxyz"));
     }
 
     static boolean isUniqueWithDataStructure(String s){
@@ -33,4 +39,13 @@ public class _1_1_IsUnique {
         return true;
     }
 
+    static boolean isUniqueWithoutDataStructure(String s) {
+        char[] chars = s.toCharArray();
+        Arrays.sort(chars);
+
+        for(int i = 1; i < chars.length-1; i++){
+            if(chars[i] == chars[i-1]) return false;
+        }
+        return true;
+    }
 }
