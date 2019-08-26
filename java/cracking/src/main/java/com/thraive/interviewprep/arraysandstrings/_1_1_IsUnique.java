@@ -24,6 +24,8 @@ public class _1_1_IsUnique {
         Assert.check(!isUniqueWithoutDataStructure("abcdefghijklmnopqrstuvwxyzz"));
     }
 
+
+    // time: O(n), space O(numOfCharNums) => O(1)... bounded by worst case 128
     static boolean isUniqueWithDataStructure(String s){
         boolean[] charSet = new boolean[128];
 
@@ -40,6 +42,7 @@ public class _1_1_IsUnique {
         return true;
     }
 
+    // time: O(n log n), space: O(1)
     static boolean isUniqueWithoutDataStructure(String s) {
         char[] chars = s.toCharArray();
         Arrays.sort(chars);

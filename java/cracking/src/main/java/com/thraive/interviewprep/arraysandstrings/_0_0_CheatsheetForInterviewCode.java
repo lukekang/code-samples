@@ -16,6 +16,24 @@ public class _0_0_CheatsheetForInterviewCode {
 
     public static void main(String[] args){
 
+        primitives();
+        stringsAndArrays();
+
+
+    }
+
+    private static void primitives() {
+        // binary operations
+        countBits(1);
+
+
+    }
+
+    private static void countBits(int i) {
+
+    }
+
+    private static void stringsAndArrays() {
         // Strings and arrays
         String s = "here is my arbitrary string";
 
@@ -68,7 +86,6 @@ public class _0_0_CheatsheetForInterviewCode {
         }
 
         personMap.forEach((k, v) -> System.out.println("key: " + k + ", value: " + v.toString()));
-
     }
 
     public static class Person{

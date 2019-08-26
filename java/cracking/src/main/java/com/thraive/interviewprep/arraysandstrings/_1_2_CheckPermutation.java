@@ -13,8 +13,11 @@ public class _1_2_CheckPermutation {
         Assert.check(!checkPermutation("bird", "brady"));
     }
 
+    // Convert to array of integers... int[]
 
+    // Assumptions: case sensitive, whitespace count as characters
 
+    // time: O(3n) => O(n), space: O(n)
     static boolean checkPermutation(String s1, String s2){
         // initial implementation
 
