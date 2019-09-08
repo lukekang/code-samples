@@ -26,9 +26,6 @@ public class _0_0_CheatsheetForInterviewCode {
         // binary operations
         binaryOps();
 
-
-
-
     }
 
     private static void binaryOps() {
@@ -36,35 +33,40 @@ public class _0_0_CheatsheetForInterviewCode {
         int v1 = 6;     // 0110
         int v2 = 5;     // 0101
         int res = 6|5;  // 0111
-        System.out.println("6 | 5 = " + res);
+        out.println("6 | 5 = " + res);
 
         // &
         v1 = 6;         // 0110
         v2 = 5;         // 0101
         res = 6&5;      // 0100
-        System.out.println("6 & 5 = " + res);
+        out.println("6 & 5 = " + res);
 
         // ^ XOR
         v1 = 6;         // 0110
         v2 = 5;         // 0101
         res = 6 ^ 5;    // 0011
-        System.out.println("6 ^ 5 = " + res);
+        out.println("6 ^ 5 = " + res);
 
         // ~ Complement
         v1 = 6;         // 0000 0110
         res = ~v1;      // 1111 1001
-        System.out.println("~ 6 = " + res);
+        out.println("~ 6 = " + res);
 
-        System.out.println(Integer.toBinaryString(6));
-        System.out.println(Integer.toBinaryString(res));
+        out.println(Integer.toBinaryString(6));
+        out.println(Integer.toBinaryString(res));
 
 
-
-        System.out.println("MAX => " + Integer.toBinaryString(Integer.MAX_VALUE));
-        System.out.println("MIN => " + Integer.toBinaryString(Integer.MIN_VALUE));
+        out.println("MAX => " + Integer.toBinaryString(Integer.MAX_VALUE));
+        out.println("MIN => " + Integer.toBinaryString(Integer.MIN_VALUE));
 
         for(int i = -100; i <=100; i++){
-            System.out.println(i + " => " + Integer.toBinaryString(i));
+            out.println(i + " => " + Integer.toBinaryString(i));
+        }
+
+
+        for(int i = 0; i < 16; i++){
+            int mask = 1 << i;
+            out.println("1 << " + i + " = " + mask);
         }
 
     }
@@ -114,14 +116,35 @@ public class _0_0_CheatsheetForInterviewCode {
 
         // iterate over keys
         for(Integer key : personMap.keySet()){
-            System.out.println(key);
+            out.println(key);
         }
         // iterate over values
         for(Person p : personMap.values()){
-            System.out.println(p.toString());
+            out.println(p.toString());
         }
 
-        personMap.forEach((k, v) -> System.out.println("key: " + k + ", value: " + v.toString()));
+        personMap.forEach((k, v) -> out.println("key: " + k + ", value: " + v.toString()));
+
+
+        // chars and numeric trickery
+        char c = '\0';
+        out.println("3 consecutive octal escapes = (" + c + c + c + ")");
+
+        out.println("any char subtracted by itself is = " + (c - c));
+
+        String test = "my test string";
+        out.println("In the test string = '" + test + ", the 1st character charAt(0) value = " + test.charAt(0));
+
+        out.println("We can start doing bit vector stuff by subtracting characters by 'a'..");
+        out.println("So '" + test.charAt(0) + "' subtracted by 'a' = " + (test.charAt(0) - 'a'));
+
+        out.println("We can then insert that into an int if we want");
+        out.println("'" + test.charAt(0) + "' could then be placed in K-th bit: someint = (1 << (" + test.charAt(0) + " - 'a'))");
+        int checker = (1 << test.charAt(0) - 'a');
+        out.println("the int value of that should  be 2 ^ " + (test.charAt(0)-'a') + " = " + checker);
+        out.println("the binary rep of that would be: " + Integer.toBinaryString(checker));
+
+
     }
 
     public static class Person{
