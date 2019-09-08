@@ -24,12 +24,48 @@ public class _0_0_CheatsheetForInterviewCode {
 
     private static void primitives() {
         // binary operations
-        countBits(1);
+        binaryOps();
+
+
 
 
     }
 
-    private static void countBits(int i) {
+    private static void binaryOps() {
+        // OR
+        int v1 = 6;     // 0110
+        int v2 = 5;     // 0101
+        int res = 6|5;  // 0111
+        System.out.println("6 | 5 = " + res);
+
+        // &
+        v1 = 6;         // 0110
+        v2 = 5;         // 0101
+        res = 6&5;      // 0100
+        System.out.println("6 & 5 = " + res);
+
+        // ^ XOR
+        v1 = 6;         // 0110
+        v2 = 5;         // 0101
+        res = 6 ^ 5;    // 0011
+        System.out.println("6 ^ 5 = " + res);
+
+        // ~ Complement
+        v1 = 6;         // 0000 0110
+        res = ~v1;      // 1111 1001
+        System.out.println("~ 6 = " + res);
+
+        System.out.println(Integer.toBinaryString(6));
+        System.out.println(Integer.toBinaryString(res));
+
+
+
+        System.out.println("MAX => " + Integer.toBinaryString(Integer.MAX_VALUE));
+        System.out.println("MIN => " + Integer.toBinaryString(Integer.MIN_VALUE));
+
+        for(int i = -100; i <=100; i++){
+            System.out.println(i + " => " + Integer.toBinaryString(i));
+        }
 
     }
 

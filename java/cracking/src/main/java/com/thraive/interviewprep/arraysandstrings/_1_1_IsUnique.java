@@ -22,6 +22,12 @@ public class _1_1_IsUnique {
         Assert.check(isUniqueWithoutDataStructure("dog"));
         Assert.check(isUniqueWithoutDataStructure("abcdefghijklmnopqrstuvwxyz"));
         Assert.check(!isUniqueWithoutDataStructure("abcdefghijklmnopqrstuvwxyzz"));
+
+
+        Assert.check(!isUniqueBitVector("doggy"));
+        Assert.check(isUniqueBitVector("dog"));
+        Assert.check(isUniqueBitVector("abcdefghijklmnopqrstuvwxyz"));
+        Assert.check(!isUniqueBitVector("abcdefghijklmnopqrstuvwxyzz"));
     }
 
 
@@ -50,6 +56,10 @@ public class _1_1_IsUnique {
         for(int i = 0; i < chars.length-1; i++){
             if(chars[i] == chars[i+1]) return false;
         }
+        return true;
+    }
+
+    static boolean isUniqueBitVector(String s){
         return true;
     }
 }
